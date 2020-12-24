@@ -1,8 +1,12 @@
 const menu = document.querySelector('.menu'),
+    overlay = document.querySelector('.menu_overlay'),
     burger = document.querySelector('.hamburger'),
     body = document.querySelector('body'),
-    closeEl = document.querySelector('.menu_close');
+    closeEl = document.querySelector('.menu_close'),
+    menuElements = document.querySelectorAll('.menu_list li');
 
+const barsPersents = document.querySelectorAll('.persent'),
+    bars = document.querySelectorAll('.grid_status_item_front');
 
     /*policyButton = document.querySelector('.policy_trigger'),
     policy = document.querySelector('.policy'),
@@ -18,10 +22,28 @@ burger.addEventListener('click', () => {
     menu.classList.add('active');
 });
 
+menu.addEventListener('click', (e) => {
+    if(e.target.matches('.menu_overlay')){
+        menu.classList.remove('active');
+        body.style.overflow = '';
+    }
+})
+
+menuElements.forEach((el) => {
+    el.addEventListener('click', () => {
+        body.style.overflow = '';
+        menu.classList.remove('active');
+    })
+})
+
 closeEl.addEventListener('click', () => {
     menu.classList.remove('active');
     body.style.overflow = '';
 });
+
+bars.forEach((bar,i) => {
+    bar.style.width = barsPersents[i].innerHTML;
+})
 
 // policyButton.addEventListener('click', (e) => {
 //     e.preventDefault();
