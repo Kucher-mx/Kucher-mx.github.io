@@ -1,20 +1,21 @@
 const menu = document.querySelector('.menu'),
     burger = document.querySelector('.hamburger'),
-    closeEl = document.querySelector('.menu_close'),
-    policyButton = document.querySelector('.policy_trigger'),
+    body = document.querySelector('body'),
+    closeEl = document.querySelector('.menu_close');
+
+
+    /*policyButton = document.querySelector('.policy_trigger'),
     policy = document.querySelector('.policy'),
     modal = document.querySelector('.modal'),
-    body = document.querySelector('body'),
     modalClose = document.querySelector('.modal_close'),
     modalAgree = document.querySelector('.modal_agree'),
     inputAgree = document.querySelector('#agree_input'),
     statuses = document.querySelectorAll('.persent'),
-    frontStatuses = document.querySelectorAll('.grid_status_item_front');
-
+    frontStatuses = document.querySelectorAll('.grid_status_item_front');*/
 
 burger.addEventListener('click', () => {
     body.style.overflow = 'hidden';
-    menu.classList.toggle('active');
+    menu.classList.add('active');
 });
 
 closeEl.addEventListener('click', () => {
@@ -36,7 +37,8 @@ closeEl.addEventListener('click', () => {
 
 // modalClose.addEventListener('click', () => {
 //     closeModal();
-// });
+// });   npm install wow.js
+
 
 // modalAgree.addEventListener('click', () => {
 //     closeModal();
@@ -48,6 +50,9 @@ closeEl.addEventListener('click', () => {
 //     modal.classList.remove('modal_active');
 // };
 
-statuses.forEach((el, idx) => {
-    frontStatuses[idx].style.width = `${el.innerHTML.slice(0, -1)}%`;
-})
+//statuses.forEach((el, idx) => {
+//    frontStatuses[idx].style.width = `${el.innerHTML.slice(0, -1)}%`;
+//})
+
+new WOW().init();
+
